@@ -31,13 +31,11 @@ public class Pirates {
 			positionsA[x] = sc.nextInt();
 
 		}
-		clearScreen();
 		System.out.println("-Player 2-");
 		for (int x = 0; x < 3; x++) {
 			System.out.println("Where to put Ship " + shipNamesB[x]);
 			positionsB[x] = sc.nextInt();
 		}
-		clearScreen();
 
 		play();
 
@@ -47,13 +45,18 @@ public class Pirates {
 		do {
 			u++;
 			if ((u % 2) != 0) {
+				System.out.println("u value:");
+				System.out.println(u);
 			 winA =	checkForWinner(winA);
 			}
 
 			else {
+				System.out.println("u value:");
+				System.out.println(u);
+				System.out.println("pirate play");
 			winB =	checkForWinner(winB);
 			}
-		} while (winA != true && winB != true);
+		} while (winA != true || winB != true);
 		if(winA==true){
 			System.out.println("The Good Guys Won!");
 		}
@@ -71,7 +74,6 @@ public class Pirates {
 		if ((u % 2) != 0) {
 
 			for(int o = 0; o < positionsA.length; o++){
-				
 				if(positionsB[o]==hit){
 					shipsB[o] = true;
 					System.out.println("Ship "+ shipNamesB[o]+" was hit! Sinking like the Titanic! ");
@@ -92,21 +94,28 @@ public class Pirates {
 			}
 
 			else {
+				System.out.println("pirate boolean");
 			
-				
+				// FOUND THE ERROR, should be o instead of 0
 				for(int o = 0; 0 < positionsA.length; o++){
+					System.out.println("pirate for loop");
+					System.out.println("o value:");
+					System.out.println(o);
 					
 					if(positionsA[o]==hit){
+						System.out.println("pirate for if");
 						shipsA[o] = true;
 						System.out.println("Ship "+ shipNamesA[o]+" was hit! Sinking like the Titanic! ");
 						break;
 					}
 					else  if(o==3){
+						System.out.println("pirate for else if");
 						System.out.println("No fish was harmed.");
 					}
 					
 				}
 				
+				System.out.println("pirate for loop out");
 				for(int z =0 ; z < shipsA.length ; z++){
 					if(shipsA[z]==true){
 						p++;
@@ -120,7 +129,7 @@ public class Pirates {
 			win = true;
 		}
 		
-		
+		System.out.println(p);
 		return win;
 	}
 
