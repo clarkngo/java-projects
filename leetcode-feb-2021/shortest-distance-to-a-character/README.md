@@ -8,6 +8,7 @@ Example 1:
 
 Input: s = "loveleetcode", c = "e"
 Output: [3,2,1,0,1,0,0,1,2,2,1,0]
+
 Example 2:
 
 Input: s = "aaab", c = "b"
