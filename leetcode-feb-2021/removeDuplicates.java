@@ -44,14 +44,15 @@ Output: 2, nums = [1,2]
 
 
 Given:   
-Each line is whenever i or j updates
+0  1  1  2  2  3  3  3  4
 j = 0
 i = 1
 
-when i and j not the same, increase j++
+while loop - while "i" is less than nums.length
+when "i" and "j" not the same, increase j++, assign num[i] to num[j]
 every loop increase i++
-exit while loop if i is not less than arr.length anymore
 
+Each line is whenever i or j updates:
       0  1  1  2  2  3  3  3  4
       j  i
          j
@@ -59,7 +60,7 @@ exit while loop if i is not less than arr.length anymore
           j    i
             j  i
 
-Update val
+num[j] != num[i] so let's update val of num[j]:
 
       0  1  2  2  2  3  3  3  4
             j  i
@@ -67,7 +68,7 @@ Update val
                      i
                j     i
         
-Update val 
+num[j] != num[i] so let's update val of num[j]:
       0  1  2  3  2  3  3  3  4
                j     i 
                         i
@@ -75,11 +76,11 @@ Update val
                   j           i   
 
 
-Update val 
+num[j] != num[i] so let's update val of num[j]:
       0  1  2  3  4  3  3  3  4
                   j           i   
 
-exit while loop
+exit while loop because "i" is equal to nums.length
 
 return j + 1
 */
